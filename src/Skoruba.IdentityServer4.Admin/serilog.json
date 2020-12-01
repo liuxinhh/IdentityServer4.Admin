@@ -1,9 +1,11 @@
 ﻿{
     "Serilog": {
         "MinimumLevel": {
-            "Default": "Error",
+            "Default": "Warning",
             "Override": {
-                "Skoruba": "Information"
+                "Skoruba": "Information",
+                "Microsoft": "Information",
+                "System": "Warning"
             }
         },
         "WriteTo": [
@@ -15,17 +17,6 @@
                 "Args": {
                     "path": "Log\\skoruba_admin.txt",
                     "rollingInterval": "Day"
-                }
-            },
-            {
-                "Name": "MSSqlServer",
-                "Args": {
-                    "connectionString": "Server=(localdb)\\mssqllocaldb;Database=IdentityServer4Admin;Trusted_Connection=True;MultipleActiveResultSets=true",
-                    "tableName": "Log",
-                    "columnOptionsSection": {
-                        "addStandardColumns": [ "LogEvent" ],
-                        "removeStandardColumns": [ "Properties" ]
-                    }
                 }
             }
         ]

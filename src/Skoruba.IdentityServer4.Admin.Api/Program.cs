@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Net;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -84,7 +85,14 @@ namespace Skoruba.IdentityServer4.Admin.Api
                  })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.ConfigureKestrel(options => options.AddServerHeader = false);
+                    webBuilder.ConfigureKestrel(options =>
+                    {
+                        options.Listen(IPAddress.IPv6Any, 44302, listenOptions =>
+                        {
+                            listenOptions.UseHttps(Path.Combine(AppContext.BaseDirectory, "socialnetwork.pfx"), "123456");
+                        });
+                        options.AddServerHeader = false;
+                    });
                     webBuilder.UseStartup<Startup>();
                 })
                 .UseSerilog((hostContext, loggerConfig) =>

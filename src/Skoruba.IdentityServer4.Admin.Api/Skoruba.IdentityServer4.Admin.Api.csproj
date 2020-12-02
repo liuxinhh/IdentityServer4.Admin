@@ -72,6 +72,17 @@
         </EmbeddedResource>
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="Dockerfile" />
+      <Content Include="Dockerfile">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <None Remove="socialnetwork.pfx" />
+      <Content Include="socialnetwork.pfx">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>
 
 

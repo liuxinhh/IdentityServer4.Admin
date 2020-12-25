@@ -89,7 +89,7 @@ namespace Skoruba.IdentityServer4.Admin.Api
                     {
                         options.Listen(IPAddress.IPv6Any, 44302, listenOptions =>
                         {
-                            listenOptions.UseHttps(Path.Combine(AppContext.BaseDirectory, "socialnetwork.pfx"), "123456");
+                            listenOptions.UseHttps(Path.Combine(AppContext.BaseDirectory, "www.liux.site.pfx"), "123456");
                         });
                         options.AddServerHeader = false;
                     });

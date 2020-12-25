@@ -132,7 +132,7 @@
       <None Update="Dockerfile">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="socialnetwork.pfx">
+      <None Update="www.liux.site.pfx">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
     </ItemGroup>

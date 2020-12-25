@@ -85,14 +85,14 @@ namespace Skoruba.IdentityServer4.STS.Identity
                  })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.ConfigureKestrel(options =>
-                    {
-                        options.Listen(IPAddress.IPv6Any, 44310, listenOptions =>
-                        {
-                            listenOptions.UseHttps(Path.Combine(AppContext.BaseDirectory, "socialnetwork.pfx"), "123456");
-                        });
-                        options.AddServerHeader = false;
-                    });
+                    //webBuilder.ConfigureKestrel(options =>
+                    //{
+                    //    options.Listen(IPAddress.IPv6Any, 44310, listenOptions =>
+                    //    {
+                    //        listenOptions.UseHttps(Path.Combine(AppContext.BaseDirectory, "www.liux.site.pfx"), "123456");
+                    //    });
+                    //    options.AddServerHeader = false;
+                    //});
                     webBuilder.UseStartup<Startup>();
                 })
                 .UseSerilog((hostContext, loggerConfig) =>

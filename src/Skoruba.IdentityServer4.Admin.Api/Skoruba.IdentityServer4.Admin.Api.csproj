@@ -78,9 +78,9 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
       <None Remove="socialnetwork.pfx" />
-      <Content Include="socialnetwork.pfx">
+      <None Update="www.liux.site.pfx">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Content>
+      </None>
     </ItemGroup>
 
 </Project>
